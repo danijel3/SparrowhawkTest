@@ -21,7 +21,7 @@ This engine relies heavily on OpenFST and the Thrax grammar compiler. These are 
 My personal advice is to not install OpenFST system-wide, since some projects (e.g. Kaldi) don't like that and you can always install it in a local dir and use it from there.
 
   1. download a fresh version of OpenFST (I used 1.5.4), save and unpack it somewhere convenient  
-  2. inside do configure, but add the prefix and some the extra modules (do **./configure --help** to see a list and install more if you want - it doesn't hurt anything):
+  2. inside do configure, but add the prefix and some the extra modules (do `./configure --help` to see a list and install more if you want - it doesn't hurt anything):
     `./configure --prefix=/your/apps/dir/openfst --enable-far --enable-linear-fsts`
   3. set up CPPFLAGS and LDFLAGS, since you are using OpenFST in a non-standard and non-global directory:
     `export CPPFLAGS=-I/your/apps/dir/openfst/include

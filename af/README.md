@@ -1,4 +1,4 @@
-# About the files in this filder
+# About the files in this folder
 
 These files were created by Google, for the SLTU 2016. I retrieved it from within the docker, available at:
 
