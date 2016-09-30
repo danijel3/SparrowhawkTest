@@ -1,8 +1,8 @@
 # About the files in this folder
 
-These files were created by Google, for the SLTU 2016. I retrieved it from within the docker, available at:
+These files were created by Google, for the SLTU 2016. They can be fond them in this repository:
 
-https://hub.docker.com/r/mjansche/tts-tutorial-sltu2016/
+https://github.com/mjansche/tts-tutorial/tree/master/usr_local/share/sparrowhawk/af
 
 It seems they were compiled from the grammar files available here:
 
