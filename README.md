@@ -25,7 +25,7 @@ My personal advice is to not install OpenFST system-wide, since some projects (e
     `./configure --prefix=/your/apps/dir/openfst --enable-far --enable-linear-fsts`
   3. set up CPPFLAGS and LDFLAGS, since you are using OpenFST in a non-standard and non-global directory:
     `export CPPFLAGS=-I/your/apps/dir/openfst/include
-    export LDFLAGS=-I/your/apps/dir/openfst/lib`
+    export LDFLAGS=-L/your/apps/dir/openfst/lib`
   4. do `make` and `make install` (no sudo neccessary in this case) -- hint, do `make -j8` to parallelize compiling and speed things up
   5. download and unpack Thrax (my version was 1.2-2) similarly to how you did OpenFST
   6. do configure, just like before (set the prefix to the same openfst directory, to make things simpler):
