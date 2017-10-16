@@ -98,7 +98,10 @@ This is the actual project you need. Make sure you havemake -j your OpenFST path
      - you may also need to do `autoreconf` here
   4. `./configure --prefix=$CONDA_PREFIX`
   5. `make`
-  6. `make install`  
+  6. `make install` 
+  
+For some reason, not all include files are copied from Sparrowhawk, so it is recommended to copy them manually in order to allow this project to compile correctly:
+` cp src/include/sparrowhawk/* $CONDA_PREFIX/include/sparrowhawk`
   
 # Compiling this project
 
