@@ -28,7 +28,7 @@ conda create --name=sparrowhawk
 ```
 source activate sparrowhawk
 ```
-    * you can leave the environment using this command :
+  (you can leave the environment using this command)
 ```
 source deactivate
 ```
