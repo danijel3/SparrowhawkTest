@@ -4,8 +4,8 @@ project(SparrowhawkTest)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
-link_directories("/home/guest/apps/openfst/lib")
-include_directories("/home/guest/apps/openfst/include")
+link_directories("$ENV{CONDA_PREFIX}/lib")
+include_directories("$ENV{CONDA_PREFIX}/include")
 
 set(SOURCE_FILES main.cpp)
 add_executable(SparrowhawkTest ${SOURCE_FILES})
