@@ -21,19 +21,29 @@ While the instruction for installation is available on other sources, I would li
 For this document, I will be using conda, but feel free to use anything else (or install globally). You can change `$CONDA_PREFIX` in the description below to whatever meets your needs. To install conda, look for a script online (eg. https://conda.io/miniconda.html) and then do the following steps to create a suitable environment:
 
   1. Create tan environemnt which we will call sparrowhawk:
-     `conda create --name=sparrowhawk`
+```
+conda create --name=sparrowhawk
+```
   2. Use this to activate the environment anytime you want to use this program:
-     `source activate sparrowhawk`
-    - you can leave the environment using this command :
-     `source deactivate`
+```
+source activate sparrowhawk
+```
+    * you can leave the environment using this command :
+```
+source deactivate
+```
   3. We will store all the files in the main env directory:
-     `cd $CONDA_PREFIX`
+```
+cd $CONDA_PREFIX
+```
   4. Before we can do that, we should set some environment variables:
-     `mkdir -p etc/conda/activate.d`
-     `printf '#!/bin/bash\n\nexport CPPFLAGS=-I$CONDA_PREFIX/include\nexport LDFLAGS=-L$CONDA_PREFIX/lib\nexport LD_LIBRARY_PATH=$CONDA_PREFIX/lib\n' > etc/conda/activate.d/env.sh`
-     `chmod +x etc/conda/activate.d/env.sh`
-     `source deactivate`
-     `source activate sparrowhawk`
+```
+mkdir -p etc/conda/activate.d
+printf '#!/bin/bash\n\nexport CPPFLAGS=-I$CONDA_PREFIX/include\nexport LDFLAGS=-L$CONDA_PREFIX/lib\nexport LD_LIBRARY_PATH=$CONDA_PREFIX/lib\n' > etc/conda/activate.d/env.sh
+chmod +x etc/conda/activate.d/env.sh
+source deactivate
+source activate sparrowhawk
+```
 
 Now you should be all set to perform the steps below.
 
@@ -42,18 +52,26 @@ Now you should be all set to perform the steps below.
 This engine relies heavily on OpenFST and the Thrax grammar compiler. These are pretty standard tools and used in many different projects. They are used to represent the rules of the language in a consistent and usable fashion. It's highly recommended to go through some examples on the OpenFST website (they're pretty fun!).
 
   1. download a fresh version of OpenFST, save and unpack:
-     `wget http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.3.tar.gz`
-     `tar xvf openfst-1.6.3.tar.gz`
-     `cd openfst-1.6.3`
+```
+wget http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.3.tar.gz
+tar xvf openfst-1.6.3.tar.gz
+cd openfst-1.6.3
+```
   2. inside do configure, but add the prefix and some the extra modules (do `./configure --help` to see a list and install more if you want - it doesn't hurt anything):
-    `./configure --prefix=$CONDA_PREFIX --enable-far --enable-linear-fsts --enable-pdt --enable-mpdt --enable-grm`
+```
+./configure --prefix=$CONDA_PREFIX --enable-far --enable-linear-fsts --enable-pdt --enable-mpdt --enable-grm
+```
   3. do `make` and `make install` (no sudo neccessary in this case) -- hint, do `make -j8` to parallelize compiling and speed things up
   4. download and unpack Thrax similarly to how you did OpenFST:
-     `wget http://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.2.3.tar.gz`
-     `tar xvf thrax-1.2.3.tar.gz`
-     `cd thrax-1.2.3`
+```
+wget http://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.2.3.tar.gz
+tar xvf thrax-1.2.3.tar.gz
+cd thrax-1.2.3
+```
   6. do configure, just like before:
-    `./configure --prefix=$CONDA_PREFIX`
+```
+./configure --prefix=$CONDA_PREFIX
+```
   7. do `make` and `make install` 
      
 Once you have OpenFST and Thrax installed, you will find some useful programs and libraries in the chosen directory. Again, look for some tutorials on OpenFST and Thrax to learn what they do.
